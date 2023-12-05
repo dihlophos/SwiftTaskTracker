@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:allowBackup="false"
+        android:name=".MainApplication"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:icon="@drawable/ic_stat_name"
+        android:label="Swift Task Tracker"
+        android:appCategory="productivity"
+        android:theme="@style/AppTheme"
+        tools:targetApi="o">
         <activity
             android:name=".MainActivity"
             android:exported="true">
