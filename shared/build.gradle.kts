@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    id("com.google.devtools.ksp") version "1.9.20-1.0.14"
 }
 
 kotlin {
@@ -31,6 +32,7 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.mockative)
         }
     }
 }
@@ -41,4 +43,12 @@ android {
     defaultConfig {
         minSdk = 24
     }
+}
+
+dependencies {
+    configurations
+        .filter { it.name.startsWith("ksp") && it.name.contains("Test") }
+        .forEach {
+            add(it.name, "io.mockative:mockative-processor:2.0.1")
+        }
 }
