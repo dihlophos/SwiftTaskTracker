@@ -1,10 +1,12 @@
 package com.my.swifttasktracker.android
 
 import android.app.Application
-import com.my.swifttasktracker.appModule
-import org.koin.core.context.startKoin
+import com.my.swifttasktracker.di.android.androidModule
+import com.my.swifttasktracker.shared.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
+
 
 open class MainApplication : Application() {
     override fun onCreate() {
@@ -16,7 +18,10 @@ open class MainApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MainApplication)
-            modules(appModule())
+            modules(
+                appModule(),
+                androidModule()
+            )
         }
     }
 }
