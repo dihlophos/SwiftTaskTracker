@@ -16,8 +16,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.my.swifttasktracker.android.taskListActivity.TaskListUiState.Loading
-import com.my.swifttasktracker.android.taskListActivity.TaskListUiState.Success
 import com.my.swifttasktracker.shared.domain.models.Task
 import org.koin.androidx.compose.koinViewModel
 import org.koin.compose.KoinContext
@@ -45,7 +43,10 @@ fun NewTaskInput(viewModel: TaskListViewModel) {
         label = { Text("Task Name") }
     )
 
-    Button(onClick = { viewModel.addTask(taskName) }) {
+    Button(onClick = {
+        viewModel.addTask(taskName)
+        taskName = ""
+    }) {
         Text("New Task")
     }
 }
@@ -56,8 +57,8 @@ fun TaskRow(
 ) {
   Column {
       Text(text = task.name)
-      //Text(text = task.createdDate.toString())
-      //Text(text = task.updatedDate.toString())
+      Text(text = task.createdDate.toString())
+      Text(text = task.updatedDate.toString())
   }
 }
 
@@ -77,11 +78,12 @@ fun TaskListScreen() {
     val uiState by viewModel.uiState.collectAsState()
 
     when (uiState) {
-        Loading -> { Text("Loading") }
-        is Success -> {
-            TaskList(tasks = (uiState as Success).tasks)
+        TaskListUiState.Loading -> { Text("Loading") }
+        is TaskListUiState.Success -> {
+            Column {
+                NewTaskInput(viewModel)
+                TaskList(tasks = (uiState as TaskListUiState.Success).tasks)
+            }
         }
     }
-
-    NewTaskInput(viewModel)
 }

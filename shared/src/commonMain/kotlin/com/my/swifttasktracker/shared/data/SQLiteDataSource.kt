@@ -15,7 +15,6 @@ class SQLiteDataSource(databaseDriverFactory: DatabaseDriverFactory): IDataSourc
     private val taskQuery = database.taskQueries
 
     override fun newTask(name: String) {
-        taskQuery.deleteAllTasks()
         taskQuery.insertTask(
             taskName = name,
             createdDate = Clock.System.now().toLocalDateTimeString(),
