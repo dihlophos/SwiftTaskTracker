@@ -11,15 +11,19 @@
         android:theme="@style/AppTheme"
         tools:targetApi="o">
         <activity
-            android:name=".createTaskActivity.CreateTaskActivity"
+            android:name=".createTaskFromIntentActivity.CreateTaskFromIntentActivity"
             android:exported="true"
-            android:theme="@style/AppTheme">
-            <intent-filter
-                android:label="@string/new_task_from_external_source">
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter android:label="@string/new_task_from_external_source">
                 <action android:name="android.intent.action.PROCESS_TEXT" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".createTaskActivity.CreateTaskActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".taskListActivity.TaskListActivity"

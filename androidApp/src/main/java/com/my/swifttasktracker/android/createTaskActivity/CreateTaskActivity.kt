@@ -22,9 +22,6 @@ class CreateTaskActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val intentProcessText = intent
-            .getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT)?.toString() ?: ""
-
         setContent {
             SwiftTaskTrackerTheme {
                 // A surface container using the 'background' color from the theme
@@ -32,7 +29,7 @@ class CreateTaskActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    CreateTaskScreen(intentProcessText)
+                    CreateTaskScreen()
                 }
             }
         }
@@ -55,8 +52,8 @@ fun NewTaskInput(viewModel: CreateTaskViewModel) {
 }
 
 @Composable
-fun CreateTaskScreen(initialText: String) {
-    val viewModel = koinViewModel<CreateTaskViewModel>(parameters = { parametersOf(initialText) })
+fun CreateTaskScreen() {
+    val viewModel = koinViewModel<CreateTaskViewModel>()
     Column {
         NewTaskInput(viewModel)
     }

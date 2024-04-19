@@ -9,10 +9,9 @@ import com.my.swifttasktracker.shared.domain.models.ITaskRepository
 import kotlinx.coroutines.launch
 
 class CreateTaskViewModel(
-    private val taskRepository: ITaskRepository,
-    initialValue: String = ""
+    private val taskRepository: ITaskRepository
 ): ViewModel() {
-    var taskDescription by mutableStateOf(initialValue)
+    var taskDescription by mutableStateOf("")
 
     fun addTask() {
         viewModelScope.launch {
