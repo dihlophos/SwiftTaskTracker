@@ -1,16 +1,18 @@
 [versions]
-agp = "8.2.0"
+agp = "8.3.2"
 sqldelight = "2.0.0"
 coroutinesVersion = "1.7.3"
-koin = "3.5.2-RC1"
-kotlin = "1.9.20"
-compose = "1.5.4"
-compose-compiler = "1.5.4"
-compose-material3 = "1.1.2"
-androidx-activityCompose = "1.8.1"
-kotlinxDatetime = "0.5.0"
+koin = "3.5.6"
+kotlin = "1.9.23"
+compose = "1.6.6"
+compose-compiler = "1.5.12"
+compose-material3 = "1.2.1"
+androidx-activityCompose = "1.9.0"
+kotlinxDatetime = "0.6.0-RC.2"
 mockative = "2.0.1"
 coreI18n = "1.0.0-alpha01"
+lifecycle-runtime-ktx = "2.7.0"
+compose-bom = "2024.04.01"
 
 [libraries]
 android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqldelight" }
@@ -31,6 +33,11 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 mockative = { module = "io.mockative:mockative", version.ref = "mockative" }
 androidx-core-i18n = { group = "androidx.core", name = "core-i18n", version.ref = "coreI18n" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

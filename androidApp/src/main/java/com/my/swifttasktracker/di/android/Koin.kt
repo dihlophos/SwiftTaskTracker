@@ -1,5 +1,6 @@
 package com.my.swifttasktracker.di.android
 
+import com.my.swifttasktracker.android.createTaskActivity.CreateTaskViewModel
 import com.my.swifttasktracker.android.taskListActivity.TaskListViewModel
 import com.my.swifttasktracker.shared.data.DatabaseDriverFactory
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -13,6 +14,13 @@ fun androidModule() = module {
     viewModel {
         TaskListViewModel(
             taskRepository = get()
+        )
+    }
+
+    viewModel {
+        CreateTaskViewModel(
+            taskRepository = get(),
+            initialValue = get()
         )
     }
 }
