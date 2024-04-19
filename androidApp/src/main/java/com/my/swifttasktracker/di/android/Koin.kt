@@ -19,8 +19,7 @@ fun androidModule() = module {
 
     viewModel {
         CreateTaskViewModel(
-            taskRepository = get(),
-            initialValue = get()
+            taskRepository = get()
         )
     }
 }
