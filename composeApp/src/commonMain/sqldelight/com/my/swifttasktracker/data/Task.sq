@@ -12,6 +12,3 @@ VALUES(?, ?, ? , ?);
 selectAllTasks:
 SELECT TaskDb.*
 FROM TaskDb;
-
-deleteAllTasks:
-DELETE FROM TaskDb;

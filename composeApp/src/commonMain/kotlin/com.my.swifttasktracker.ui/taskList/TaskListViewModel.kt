@@ -22,6 +22,7 @@ class TaskListViewModel(
                 started = SharingStarted.WhileSubscribed(stopTimeoutMillis = 5000)
             )
 
+    @Suppress("unused")
     fun addTask(name: String) {
         viewModelScope.launch {
             taskRepository.newTask(name)
