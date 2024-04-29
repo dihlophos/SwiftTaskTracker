@@ -1,0 +1,14 @@
+CREATE TABLE TaskDb (
+    taskName TEXT NOT NULL,
+    createdDate TEXT NOT NULL,
+    updatedDate TEXT NOT NULL,
+    isDeleted TEXT NOT NULL
+);
+
+insertTask:
+INSERT INTO TaskDb(taskName, createdDate, updatedDate, isDeleted)
+VALUES(?, ?, ? , ?);
+
+selectAllTasks:
+SELECT TaskDb.*
+FROM TaskDb;

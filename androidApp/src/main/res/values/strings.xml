@@ -1,7 +1,0 @@
-<resources>
-    <string name="task_description">Task Description</string>
-    <string name="new_task">New Task</string>
-    <string name="loading">Loading</string>
-    <string name="new_task_from_external_source">Create Task</string>
-    <string name="task_created">Task Created</string>
-</resources>
