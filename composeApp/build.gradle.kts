@@ -40,12 +40,12 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
             implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
+            api(compose.runtime)
 
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
@@ -66,6 +66,7 @@ kotlin {
         }
         iosMain.dependencies {
             implementation(libs.sqldelight.native.driver)
+            implementation(libs.stately.common)
         }
     }
 }
@@ -112,6 +113,7 @@ android {
         debugImplementation(libs.compose.ui.tooling)
     }
 }
+
 
 sqldelight {
     databases {

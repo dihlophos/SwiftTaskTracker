@@ -32,6 +32,6 @@ fun appModule() = module {
     single<ICreateTaskViewModel> {
         CreateTaskViewModel(
             taskRepository = get()
-            )
+        )
     }
 }

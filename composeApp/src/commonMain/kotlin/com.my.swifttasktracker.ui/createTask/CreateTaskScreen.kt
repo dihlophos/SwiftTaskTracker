@@ -7,8 +7,8 @@ import org.koin.compose.koinInject
 
 @Composable
 fun CreateTaskScreen(
-    viewModel: ICreateTaskViewModel = koinInject(),
-    navController: NavHostController
+    navController: NavHostController,
+    viewModel: ICreateTaskViewModel = koinInject()
 ) {
     Column {
         NewTaskInput(viewModel, navController)
