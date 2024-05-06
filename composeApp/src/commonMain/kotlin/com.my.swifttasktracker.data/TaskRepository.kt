@@ -1,6 +1,6 @@
 package com.my.swifttasktracker.data
 
-import com.my.swifttasktracker.domain.models.ITaskRepository
+import com.my.swifttasktracker.domain.ITaskRepository
 import com.my.swifttasktracker.domain.models.Task
 import kotlinx.coroutines.flow.Flow
 

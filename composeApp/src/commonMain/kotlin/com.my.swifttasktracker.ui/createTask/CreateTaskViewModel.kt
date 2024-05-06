@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.my.swifttasktracker.domain.models.ITaskRepository
+import com.my.swifttasktracker.domain.ITaskRepository
 import kotlinx.coroutines.launch
 
 class CreateTaskViewModel(
