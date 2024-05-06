@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.my.swifttasktracker.R
-import com.my.swifttasktracker.domain.models.ITaskRepository
+import com.my.swifttasktracker.domain.ITaskRepository
 import org.koin.android.ext.android.inject
 
 class CreateTaskFromIntentActivity : ComponentActivity() {

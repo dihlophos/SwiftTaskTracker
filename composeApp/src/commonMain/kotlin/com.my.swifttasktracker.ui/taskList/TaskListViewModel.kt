@@ -2,7 +2,7 @@ package com.my.swifttasktracker.ui.taskList
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.my.swifttasktracker.domain.models.ITaskRepository
+import com.my.swifttasktracker.domain.ITaskRepository
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map

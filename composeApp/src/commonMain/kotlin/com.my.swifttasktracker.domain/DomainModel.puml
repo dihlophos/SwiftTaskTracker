@@ -1,0 +1,23 @@
+@startuml
+
+abstract          Task
+
+'Tasks
+OneTimeTask  <|-- Task
+Recurrent    <|-- Task
+
+'Categories
+Task         o--  Category
+
+'Task Tree
+TaskTree     --*  TaskTreeNode
+TaskTreeNode -->  OneTimeTask
+
+'Inbox
+Inbox        --*  InboxItem
+InboxItem    ..>  Task: creates
+
+'Daily Plan
+Task         o--  DailyPlan
+
+@enduml
