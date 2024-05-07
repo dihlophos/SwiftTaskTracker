@@ -16,8 +16,8 @@ import swifttasktracker.composeapp.generated.resources.new_task
 
 @Composable
 fun TaskListScreen(
-    viewModel: ITaskListViewModel = koinInject(),
-    navController: NavHostController
+    navController: NavHostController,
+    viewModel: ITaskListViewModel = koinInject()
 ) {
     val uiState by viewModel.uiState.collectAsState()
 

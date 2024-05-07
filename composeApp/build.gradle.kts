@@ -61,11 +61,16 @@ kotlin {
         }
         androidMain.dependencies {
             implementation(libs.androidx.activity.compose)
+            implementation(libs.compose.ui.tooling)
+
             implementation(libs.sqldelight.android.driver)
+
             implementation(libs.koin.insert.koin.android)
+
         }
         iosMain.dependencies {
             implementation(libs.sqldelight.native.driver)
+
             implementation(libs.stately.common)
         }
     }
@@ -108,9 +113,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-    dependencies {
-        debugImplementation(libs.compose.ui.tooling)
     }
 }
 

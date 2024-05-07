@@ -8,7 +8,6 @@
         android:icon="@drawable/ic_stat_name"
         android:label="Swift Task Tracker"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
         tools:targetApi="o"
         tools:ignore="UnusedAttribute">
         <activity
