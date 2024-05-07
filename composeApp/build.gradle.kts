@@ -61,11 +61,16 @@ kotlin {
         }
         androidMain.dependencies {
             implementation(libs.androidx.activity.compose)
+            implementation(libs.compose.ui.tooling)
+
             implementation(libs.sqldelight.android.driver)
+
             implementation(libs.koin.insert.koin.android)
+
         }
         iosMain.dependencies {
             implementation(libs.sqldelight.native.driver)
+
             implementation(libs.stately.common)
         }
     }
@@ -73,7 +78,7 @@ kotlin {
 
 android {
     namespace = "com.my.swifttasktracker"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    compileSdk = 34
 
     //TODO: Reason of the "Duplicating content roots detected" IDE warning. See https://github.com/JetBrains/compose-multiplatform/issues/2913#issuecomment-1482432764
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -90,8 +95,8 @@ android {
 
     defaultConfig {
         applicationId = "com.my.swifttasktracker"
-        minSdk = libs.versions.android.minSdk.get().toInt()
-        targetSdk = libs.versions.android.targetSdk.get().toInt()
+        minSdk = 24
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
@@ -108,9 +113,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-    dependencies {
-        debugImplementation(libs.compose.ui.tooling)
     }
 }
 
