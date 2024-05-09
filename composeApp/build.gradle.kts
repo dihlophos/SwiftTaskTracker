@@ -121,7 +121,7 @@ android {
 sqldelight {
     databases {
         create("SwiftTaskTrackerDb") {
-            packageName.set("com.my.swifttasktracker.data")
+            packageName.set("com.my.swifttasktracker.data.generated")
         }
     }
 }

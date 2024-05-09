@@ -2,6 +2,7 @@ package com.my.swifttasktracker.data
 
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
+import com.my.swifttasktracker.data.generated.SwiftTaskTrackerDb
 import com.my.swifttasktracker.domain.models.InboxItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO

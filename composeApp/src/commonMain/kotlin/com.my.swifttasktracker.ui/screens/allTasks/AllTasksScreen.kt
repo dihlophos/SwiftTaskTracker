@@ -6,5 +6,5 @@ import androidx.compose.runtime.Composable
 @Composable
 fun AllTasksScreen(
 ) {
-    Text("\uD83D\uDD34\uD83D\uDEA7⌛\uD83D\uDD04\uD83D\uDFE2 In Progress \uD83D\uDD34\uD83D\uDEA7⌛\uD83D\uDD04\uD83D\uDFE2")
+    Text("\uD83D\uDEA7 In Progress")
 }
