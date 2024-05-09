@@ -2,12 +2,10 @@ package com.my.swifttasktracker.di
 
 import com.my.swifttasktracker.data.IDataSource
 import com.my.swifttasktracker.data.SQLiteDataSource
-import com.my.swifttasktracker.data.TaskRepository
-import com.my.swifttasktracker.domain.ITaskRepository
-import com.my.swifttasktracker.ui.createTask.CreateTaskViewModel
-import com.my.swifttasktracker.ui.createTask.ICreateTaskViewModel
-import com.my.swifttasktracker.ui.taskList.ITaskListViewModel
-import com.my.swifttasktracker.ui.taskList.TaskListViewModel
+import com.my.swifttasktracker.data.InboxRepository
+import com.my.swifttasktracker.domain.IInboxRepository
+import com.my.swifttasktracker.ui.screens.inbox.IInboxViewModel
+import com.my.swifttasktracker.ui.screens.inbox.InboxViewModel
 import org.koin.dsl.module
 
 fun appModule() = module {
@@ -17,21 +15,15 @@ fun appModule() = module {
         )
     }
 
-    single<ITaskRepository> {
-        TaskRepository(
+    single<IInboxRepository> {
+        InboxRepository(
             dataSource = get()
         )
     }
 
-    single<ITaskListViewModel> {
-        TaskListViewModel(
-            taskRepository = get()
-        )
-    }
-
-    single<ICreateTaskViewModel> {
-        CreateTaskViewModel(
-            taskRepository = get()
+    single<IInboxViewModel> {
+        InboxViewModel(
+            inboxRepository = get()
         )
     }
 }

@@ -1,4 +1,4 @@
 <resources>
-    <string name="new_task_from_external_source">Create Task</string>
-    <string name="task_created">Task Created</string>
+    <string name="create_inbox_item_from_external_source">Create Inbox Item</string>
+    <string name="inbox_item_created">Inbox Item Created</string>
 </resources>

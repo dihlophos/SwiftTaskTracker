@@ -1,0 +1,17 @@
+import kotlin.Boolean;
+
+CREATE TABLE InboxDb (
+    description TEXT NOT NULL,
+    createdDate TEXT NOT NULL,
+    updatedDate TEXT NOT NULL,
+    isDeleted INTEGER AS Boolean NOT NULL DEFAULT 0
+);
+
+insertInboxItem:
+INSERT INTO InboxDb(description, createdDate, updatedDate, isDeleted)
+VALUES(?, ?, ? , ?);
+
+selectInboxItems:
+SELECT InboxDb.*
+FROM InboxDb
+WHERE isDeleted == :includeDeleted;

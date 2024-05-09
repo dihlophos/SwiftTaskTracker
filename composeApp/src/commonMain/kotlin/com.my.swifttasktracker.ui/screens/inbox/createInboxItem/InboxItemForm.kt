@@ -1,4 +1,4 @@
-package com.my.swifttasktracker.ui.createTask
+package com.my.swifttasktracker.ui.screens.inbox.createInboxItem
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -9,12 +9,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.my.swifttasktracker.ui.StringResourceSafeForPreview
 import swifttasktracker.composeapp.generated.resources.Res
-import swifttasktracker.composeapp.generated.resources.new_task
-import swifttasktracker.composeapp.generated.resources.task_description
+import swifttasktracker.composeapp.generated.resources.create_inbox_item
+import swifttasktracker.composeapp.generated.resources.description
 
 @Composable
-fun NewTaskInput(
-    taskDescription: String,
+fun InboxItemForm(
+    inboxItemDescription: String,
     onValueChange: (String) -> Unit,
     onButtonClick: () -> Unit)
 {
@@ -22,15 +22,15 @@ fun NewTaskInput(
         modifier = Modifier.fillMaxWidth()
     ) {
         TextField(
-            value = taskDescription,
+            value = inboxItemDescription,
             onValueChange = onValueChange,
             label = {
-                Text(StringResourceSafeForPreview(Res.string.task_description))
+                Text(StringResourceSafeForPreview(Res.string.description))
             }
         )
 
         Button(onClick = onButtonClick) {
-            Text(StringResourceSafeForPreview(Res.string.new_task))
+            Text(StringResourceSafeForPreview(Res.string.create_inbox_item))
         }
     }
 }

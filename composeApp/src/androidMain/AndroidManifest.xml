@@ -22,10 +22,10 @@
         </activity>
 
         <activity
-            android:name=".activities.CreateTaskFromIntentActivity"
+            android:name=".activities.CreateInboxItemFromIntentActivity"
             android:exported="true"
             android:theme="@android:style/Theme.NoDisplay">
-            <intent-filter android:label="@string/new_task_from_external_source">
+            <intent-filter android:label="@string/create_inbox_item_from_external_source">
                 <action android:name="android.intent.action.PROCESS_TEXT" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />

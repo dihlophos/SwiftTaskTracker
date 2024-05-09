@@ -13,8 +13,11 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.my.swifttasktracker.ui.appLayout.applicationBottomBar.BottomBar
 import com.my.swifttasktracker.ui.appLayout.applicationTopBar.TopBar
-import com.my.swifttasktracker.ui.createTask.CreateTaskScreen
-import com.my.swifttasktracker.ui.taskList.TaskListScreen
+import com.my.swifttasktracker.ui.screens.allTasks.AllTasksScreen
+import com.my.swifttasktracker.ui.screens.inbox.createInboxItem.CreateInboxItemScreen
+import com.my.swifttasktracker.ui.screens.inbox.InboxScreen
+import com.my.swifttasktracker.ui.screens.planning.PlanningScreen
+import com.my.swifttasktracker.ui.screens.today.TodayScreen
 
 @Composable
 fun AppLayout(
@@ -51,27 +54,21 @@ fun AppLayout(
         )
         {
             composable(route = ApplicationScreen.Today.name) {
-                TaskListScreen(
-                    navController=navController
-                )
+                TodayScreen()
             }
             composable(route = ApplicationScreen.Inbox.name) {
-                TaskListScreen(
+                InboxScreen(
                     navController=navController
                 )
             }
             composable(route = ApplicationScreen.Planning.name) {
-                CreateTaskScreen(
-                    navController = navController
-                )
+                PlanningScreen()
             }
             composable(route = ApplicationScreen.AllTasks.name) {
-                CreateTaskScreen(
-                    navController = navController
-                )
+                AllTasksScreen()
             }
-            composable(route = ApplicationScreen.CreateTask.name) {
-                CreateTaskScreen(
+            composable(route = ApplicationScreen.CreateInboxItem.name) {
+                CreateInboxItemScreen(
                     navController = navController
                 )
             }
