@@ -1,9 +1,13 @@
 <resources>
-    <string name="task_list">Task List</string>
-    <string name="create_task">CreateTask</string>
+    <!-->Application screens<-->
+    <string name="today">Today</string>
+    <string name="inbox">Inbox</string>
+    <string name="planning">Planning</string>
+    <string name="allTasks">All Tasks</string>
+    <!-->Application screens<-->
+    <string name="create_task">Create Task</string>
     <string name="back_button">Back</string>
     <string name="new_task">New Task</string>
-    <string name="inbox">Inbox</string>
     <string name="loading">Loading</string>
     <string name="task_description">Task Description</string>
 </resources>
