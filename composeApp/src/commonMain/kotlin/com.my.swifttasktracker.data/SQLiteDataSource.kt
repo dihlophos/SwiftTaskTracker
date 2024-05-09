@@ -2,7 +2,8 @@ package com.my.swifttasktracker.data
 
 import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
-import com.my.swifttasktracker.domain.models.Task
+import com.my.swifttasktracker.data.generated.SwiftTaskTrackerDb
+import com.my.swifttasktracker.domain.models.InboxItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.flow.Flow
@@ -12,30 +13,34 @@ import kotlinx.datetime.LocalDateTime
 
 class SQLiteDataSource(databaseDriverFactory: DatabaseDriverFactory): IDataSource {
     private val database = SwiftTaskTrackerDb(databaseDriverFactory.createDriver())
-    private val taskQuery = database.taskQueries
+    private val inboxQueries = database.inboxQueries
 
-    override fun newTask(name: String) {
-        taskQuery.insertTask(
-            taskName = name,
+    override fun createInboxItem(inboxItemDescription: String) {
+        inboxQueries.insertInboxItem(
+            description = inboxItemDescription,
             createdDate = Clock.System.now().toLocalDateTimeString(),
             updatedDate = Clock.System.now().toLocalDateTimeString(),
-            isDeleted = false.toString()
+            isDeleted = false
         )
     }
 
-    override fun getAllTasks(): Flow<List<Task>> {
-        return taskQuery.selectAllTasks()
+    override fun getInboxItems(): Flow<List<InboxItem>> {
+        return inboxQueries.selectInboxItems(includeDeleted = false)
             .asFlow()
             .mapToList(Dispatchers.IO)
-            .map { tasks -> tasks.map { task -> task.toTask() } }
+            .map {
+                inboxItemDbs -> inboxItemDbs.map {
+                    inboxItemDb -> inboxItemDb.toInboxItem()
+                }
+            }
     }
 
-    private fun TaskDb.toTask(): Task {
-        return Task(
-            name = taskName,
+    private fun InboxDb.toInboxItem(): InboxItem {
+        return InboxItem(
+            description = description,
             createdDate = LocalDateTime.parse(createdDate),
             updatedDate = LocalDateTime.parse(updatedDate),
-            isDeleted = isDeleted.toBoolean()
+            isDeleted = isDeleted
         )
     }
 }

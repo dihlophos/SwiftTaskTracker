@@ -1,18 +1,18 @@
-package com.my.swifttasktracker.ui.android.preview.createTask
+package com.my.swifttasktracker.ui.android.preview.inbox.createInboxItem
 
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import com.my.swifttasktracker.ui.android.preview.annotations.ThemePreviews
-import com.my.swifttasktracker.ui.createTask.NewTaskInput
+import com.my.swifttasktracker.ui.screens.inbox.createInboxItem.InboxItemForm
 import com.my.swifttasktracker.ui.theme.SwiftTaskTrackerTheme
 
 @ThemePreviews
 @Composable
-fun CreateTaskPreview() {
+fun CreateInboxItemPreview() {
     SwiftTaskTrackerTheme {
         Surface {
-            NewTaskInput(
-                taskDescription = "\uD83C\uDF7A Grab some beer",
+            InboxItemForm(
+                inboxItemDescription = "\uD83C\uDF7A Grab some beer",
                 onValueChange = {},
                 onButtonClick = {}
             )

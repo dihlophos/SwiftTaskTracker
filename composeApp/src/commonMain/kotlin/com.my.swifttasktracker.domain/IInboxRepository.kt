@@ -1,9 +1,9 @@
-package com.my.swifttasktracker.data
+package com.my.swifttasktracker.domain
 
 import com.my.swifttasktracker.domain.models.InboxItem
 import kotlinx.coroutines.flow.Flow
 
-interface IDataSource {
+interface IInboxRepository {
     fun getInboxItems(): Flow<List<InboxItem>>
 
     fun createInboxItem(inboxItemDescription: String)
