@@ -1,4 +1,4 @@
-name: Build Ubuntu
+name: 🤖Android CI Build
 
 on: push
 
