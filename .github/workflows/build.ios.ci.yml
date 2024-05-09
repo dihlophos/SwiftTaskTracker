@@ -21,6 +21,3 @@ jobs:
 
       - name: 🐘 Setup Gradle
         uses: gradle/actions/setup-gradle@v3
-
-      - name: 🏗️ Build
-        run: ./gradlew :composeApp:clean :composeApp:assemble :composeApp:assembleRelease
