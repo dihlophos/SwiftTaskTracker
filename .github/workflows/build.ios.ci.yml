@@ -5,7 +5,7 @@ on: push
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: ⬇️ Fetch
         uses: actions/checkout@v4
@@ -21,3 +21,9 @@ jobs:
 
       - name: 🐘 Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+
+      - name: ♨ Compose App Build
+        run: ./gradlew :composeApp:clean :composeApp:assembleRelease
+
+      - name:  iOS App Build
+        run: xcodebuild -project ./iosApp/iosApp.xcodeproj -scheme iosApp -configuration Release OBJROOT=./build/ios SYMROOT=./SwiftTaskTracker/build/ios -destination id=C2732EE2-0B3C-4841-9CC5-9AAEE2892B81 CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
