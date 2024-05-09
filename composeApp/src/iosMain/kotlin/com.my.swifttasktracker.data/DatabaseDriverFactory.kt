@@ -4,6 +4,7 @@ package com.my.swifttasktracker.data
 
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.native.NativeSqliteDriver
+import com.my.swifttasktracker.data.generated.SwiftTaskTrackerDb
 
 actual class DatabaseDriverFactory {
     actual fun createDriver(): SqlDriver {
