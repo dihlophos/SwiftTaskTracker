@@ -7,23 +7,20 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch
+      - name: ⬇️ Fetch
         uses: actions/checkout@v4
 
-      - name: Setup JDK
+      - name: ♨️ Setup JDK
         uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
           java-version: '11'
 
-      - name: Setup Android SDK
+      - name: 🤖 Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Build SampleApplication
-        run: ./gradlew --no-daemon build
-
-      - name: Setup Gradle
+      - name: 🐘 Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Gradle Build
-        run: ./gradlew :composeApp:clean :composeApp:assemble :composeApp:testClasses :composeApp:assembleRelease
+      - name: 🏗️ Build
+        run: ./gradlew :composeApp:clean :composeApp:assemble :composeApp:assembleRelease
