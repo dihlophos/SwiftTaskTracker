@@ -34,12 +34,13 @@ fun AppLayout(
             TopBar(
                 currentScreen = currentScreen,
                 canNavigateBack = navController.previousBackStackEntry != null,
-                navigateUp = { navController.navigateUp() },
+                navigateUp = { navController.navigateUp() }
             )
         },
         bottomBar = {
             BottomBar(
-                onNavigate = { screen -> navController.navigate(screen.name) },
+                currentScreen = currentScreen,
+                navigate = { screen -> navController.navigate(screen.name) }
             )
         }
     ) {
