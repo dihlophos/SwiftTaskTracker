@@ -3,7 +3,7 @@ name: 🍎 iOS CI Build
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
