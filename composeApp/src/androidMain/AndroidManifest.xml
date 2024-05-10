@@ -4,12 +4,15 @@
 
     <application
         android:name=".MainApplication"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
         android:appCategory="productivity"
         android:icon="@drawable/ic_stat_name"
-        android:label="Swift Task Tracker"
+        android:label="@string/application_name"
         android:supportsRtl="true"
         tools:targetApi="o"
-        tools:ignore="UnusedAttribute">
+        tools:ignore="UnusedAttribute"
+        android:dataExtractionRules="@xml/data_extraction_rules">
         <activity
             android:exported="true"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|mnc|colorMode|density|fontScale|fontWeightAdjustment|keyboard|layoutDirection|locale|mcc|navigation|smallestScreenSize|touchscreen|uiMode"
