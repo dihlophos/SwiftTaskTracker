@@ -1,4 +1,4 @@
-name: iOS CI Build
+name: 🍎 iOS CI Build
 
 on:
   push:

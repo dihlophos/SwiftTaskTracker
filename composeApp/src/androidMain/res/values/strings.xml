@@ -1,4 +1,5 @@
 <resources>
+    <string name="application_name">Swift Task Tracker</string>
     <string name="create_inbox_item_from_external_source">Create Inbox Item</string>
     <string name="inbox_item_created">Inbox Item Created</string>
 </resources>

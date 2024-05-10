@@ -11,20 +11,15 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.my.swifttasktracker.ui.appLayout.ApplicationScreen
 
 @Composable
 fun BottomBar(
-    onNavigate: (ApplicationScreen) -> Unit,
+    navigate: (ApplicationScreen) -> Unit,
+    currentScreen: ApplicationScreen = ApplicationScreen.Today,
     modifier: Modifier = Modifier.fillMaxWidth()
 ) {
-    var selectedItem by remember { mutableIntStateOf(0) }
-
     val icons = linkedMapOf(
         ApplicationScreen.Today to Icons.Filled.WbSunny,
         ApplicationScreen.Inbox to Icons.Filled.Inbox,
@@ -33,20 +28,17 @@ fun BottomBar(
     )
 
     NavigationBar (modifier) {
-        icons.entries.forEachIndexed { index, item ->
+        icons.entries.forEach{ pair ->
             NavigationBarItem(
                 icon = {
                     Icon(
-                        imageVector = item.value,
-                        contentDescription = item.key.name
+                        imageVector = pair.value,
+                        contentDescription = pair.key.name
                     )
                 },
-                label = { Text(item.key.name) },
-                selected = selectedItem == index,
-                onClick = {
-                    selectedItem = index
-                    onNavigate(item.key)
-                }
+                label = { Text(pair.key.name) },
+                selected = pair.key.name == currentScreen.name,
+                onClick = { navigate(pair.key) }
             )
         }
     }
